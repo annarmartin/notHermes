@@ -1,0 +1,30 @@
+@import './base.css';
+
+html, body { 
+  background: #1c2536; 
+  color: #fff; 
+}
+p { color: #fff; }
+
+#app {  
+  max-width: 1280px;
+  margin: 0 auto;  
+  font-weight: normal;  
+}
+
+
+@media (hover: hover) {
+
+}
+
+@media (min-width: 1024px) {
+
+  body {
+    /* display: flex; */
+    background: linear-gradient(to bottom, #243047, #111928);             
+  }
+
+  #app {
+    width: 100%;
+  }
+}
