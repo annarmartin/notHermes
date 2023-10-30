@@ -1,35 +1,43 @@
-<script>
+<script setup>
+import { ref } from 'vue'
+const hasPresentation = ref(false)
+const hasFileUploaded = ref(false)
 
-  export default {
-    props: [
-      'sessionDate',
-      'sessionTime',
-      'sessionTitle',
-      'presentationName',
-      'filePath',
-      'fileUploaded'
-    ],
-    data() {
-      return {
-        hasPresentation: false,
-        hasFileUploaded: false
-      }
-    },
-    methods: {
-      
-    },
-    beforeMount() {
-      if (this.presentationName != null) {
-        this.hasPresentation = true
-      }
-      if ((this.filePath != null) || (this.fileUploaded)) {
-        this.hasFileUploaded = true
-      }
-
-    }
+const props = defineProps({
+  sessionDate: {
+    type: String,
+    required: true
+  },
+  sessionTime: {
+    type: String,
+    required: true
+  },
+  sessionTitle: {
+    type: String,
+    required: true
+  },
+  presentationName: {
+    type: String,
+    required: false
+  },
+  filePath: {
+    type: String,
+    required: false
+  },
+  fileUploaded: {
+    type: Boolean,
+    required: false
   }
+});
 
+if (props.presentationName != null) {
+  hasPresentation.value = true
+}
+if ((props.filePath != null) || (props.fileUploaded)) {
+  hasFileUploaded.value = true
+}
 </script>
+
 
 <template>
 

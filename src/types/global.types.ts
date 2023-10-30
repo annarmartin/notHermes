@@ -1,0 +1,1 @@
+export type NodeRole = 'Unassigned' | 'Server' | 'Station' | 'Podium'
