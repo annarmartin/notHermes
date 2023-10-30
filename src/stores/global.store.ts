@@ -13,7 +13,11 @@ export const useGlobalStore = defineStore('global', () => {
     function increment() {
       count.value++
     }
+
+    const screen = 'stations' // Initial screen
+    const currentStation = {}
+    const backUrl = ''
   
-    return { count, increment, eventName, eventDates, nodeRole }
+    return { count, increment, eventName, eventDates, nodeRole, screen, currentStation, backUrl }
   });
   
